@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -37,6 +36,26 @@ class LoginScreen extends StatelessWidget {
                     decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Enter the Password')),
+              ),
+              Center(
+                child: Row(
+                  children: <Widget>[
+                    RaisedButton(
+                      child: Text("Login"),
+                      color: Colors.red,
+                      padding: EdgeInsets.all(8.0),
+                      highlightColor: Colors.black,
+                      onPressed: (){},
+                    ),
+                    RaisedButton(
+                      child: Text("Sign Up"),
+                      color: Colors.red,
+                      padding: EdgeInsets.all(8.0),
+                     highlightColor: Colors.black,
+                      onPressed: (){},
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
