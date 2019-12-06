@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'dbhelper.dart';
 import 'student_model.dart';
 
@@ -164,55 +165,51 @@ class _StudentPageState extends State<StudentPage> {
 
   SingleChildScrollView generateList(List<Student> students) {
     return SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: SizedBox(
+      scrollDirection: Axis.vertical,
+      child: SizedBox(
         width: MediaQuery.of(context).size.width,
-    child: DataTable(
-      columns: [
-
-        DataColumn(
-
-          label: Text('NAME'),
-
-        ),
-        DataColumn(
-          label: Text('DELETE'),
-        )
-      ],
-      rows: students
-          .map(
-            (student) => DataRow(
-          cells: [
-            DataCell(
-              Text(student.name,
-                style: TextStyle(
-                    color: Colors.blue
-                ),),
-
-              onTap: () {
-                setState(() {
-                  isUpdate = true;
-                  studentIdForUpdate = student.id;
-                });
-                _studentNameController.text = student.name;
-              },
+        child: DataTable(
+          columns: [
+            DataColumn(
+              label: Text('NAME'),
             ),
-            DataCell(
-              IconButton(
-                icon: Icon(Icons.delete),
-                color: Colors.red,
-                onPressed: () {
-                  dbHelper.delete(student.id);
-                  refreshStudentList();
-                },
-              ),
+            DataColumn(
+              label: Text('DELETE'),
             )
           ],
+          rows: students
+              .map(
+                (student) => DataRow(
+                  cells: [
+                    DataCell(
+                      Text(
+                        student.name,
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                      onTap: () {
+                        setState(() {
+                          isUpdate = true;
+                          studentIdForUpdate = student.id;
+                        });
+                        _studentNameController.text = student.name;
+                      },
+                    ),
+                    DataCell(
+                      IconButton(
+                        icon: Icon(Icons.delete),
+                        color: Colors.red,
+                        onPressed: () {
+                          dbHelper.delete(student.id);
+                          refreshStudentList();
+                        },
+                      ),
+                    )
+                  ],
+                ),
+              )
+              .toList(),
         ),
-      )
-          .toList(),
-    ),
-        ),
+      ),
     );
   }
 }
