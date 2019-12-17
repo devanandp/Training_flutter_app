@@ -3,8 +3,8 @@ import 'package:training_app/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   // This widget is the root of your application.
-  var textcontroller1 = TextEditingController();
-  var textcontroller2 = TextEditingController();
+  final textcontroller1 = TextEditingController();
+  final textcontroller2 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

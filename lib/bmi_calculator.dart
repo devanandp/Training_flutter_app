@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Bmi_Calculator extends StatefulWidget {
+class Bmicalculator extends StatefulWidget {
   @override
-  _Bmi_CalculatorState createState() {
-    return _Bmi_CalculatorState();
+  _BmicalculatorState createState() {
+    return _BmicalculatorState();
   }
 }
 
-class _Bmi_CalculatorState extends State<Bmi_Calculator> {
+class _BmicalculatorState extends State<Bmicalculator> {
   var bmi = 0.0;
   final textcontroller1 = TextEditingController();
   final textcontroller2 = TextEditingController();

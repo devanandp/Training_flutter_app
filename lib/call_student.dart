@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'dbhelper.dart';
 import 'student_model.dart';
 
-class Call_student extends StatelessWidget {
+class Callstudent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
