@@ -1,7 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:training_app/bmi_calculator.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  final String username;
+  final String password;
+  HomeScreen(
+      this.username,
+      this.password  );
+
+
+
+  @override
+  _HomeScreenState createState() {
+    return _HomeScreenState(this.username,
+        this.password );
+  }
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final String username;
+  final String password;
+  _HomeScreenState(
+      this.username,
+      this.password
+      );
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -19,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(color: Colors.deepPurple),
                 ),
                 accountName: Text(
-                  "Devanand",
+                  username,
                   style: TextStyle(color: Colors.deepPurple),
                 ),
                 currentAccountPicture:
