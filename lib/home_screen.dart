@@ -4,26 +4,21 @@ import 'package:training_app/bmi_calculator.dart';
 class HomeScreen extends StatefulWidget {
   final String username;
   final String password;
-  HomeScreen(
-      this.username,
-      this.password  );
 
-
+  HomeScreen(this.username, this.password);
 
   @override
   _HomeScreenState createState() {
-    return _HomeScreenState(this.username,
-        this.password );
+    return _HomeScreenState(username, password);
   }
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   final String username;
   final String password;
-  _HomeScreenState(
-      this.username,
-      this.password
-      );
+
+  _HomeScreenState(this.username, this.password);
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -55,6 +50,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 leading: Icon(
                   Icons.home,
                 ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              HomeScreen(username, password)));
+                },
               ),
               ListTile(
                 title: Text("BMI Calculator", textAlign: TextAlign.center),
@@ -83,6 +85,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ListTile(
                 title:
                     Text("Heart Risk Calculator", textAlign: TextAlign.center),
+                leading: Icon(
+                  Icons.stars,
+                ),
+              ),
+              ListTile(
+                title: Text("About", textAlign: TextAlign.center),
                 leading: Icon(
                   Icons.stars,
                 ),
