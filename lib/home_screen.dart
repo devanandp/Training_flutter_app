@@ -70,31 +70,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
               ),
-              ListTile(
-                title: Text("Calories", textAlign: TextAlign.center),
-                leading: Icon(
-                  Icons.accessibility,
-                ),
-              ),
-              ListTile(
-                title: Text("Stress Analyser", textAlign: TextAlign.center),
-                leading: Icon(
-                  Icons.gesture,
-                ),
-              ),
-              ListTile(
-                title:
-                    Text("Heart Risk Calculator", textAlign: TextAlign.center),
-                leading: Icon(
-                  Icons.stars,
-                ),
-              ),
-              ListTile(
-                title: Text("About", textAlign: TextAlign.center),
-                leading: Icon(
-                  Icons.stars,
-                ),
-              )
             ],
           ),
         ));
